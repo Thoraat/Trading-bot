@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: trading-bot-backend
-    env: docker
-    rootDir: backend/demo
-    dockerfilePath: backend/demo/Dockerfile
-    plan: free
-    autoDeploy: true
