@@ -34,7 +34,7 @@ RUN mvn package -DskipTests
 # RUN ./gradlew build -x test
 
 # Expose the port
-EXPOSE 10000
+EXPOSE 8080
 
 # Run the application
 CMD ["java", "-jar", "target/your-app-name-0.0.1-SNAPSHOT.jar"]
