@@ -1,13 +1,14 @@
-# Use official Maven image to build the application
-FROM maven:3.9.6-eclipse-temurin-17 AS build
-WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN mvn clean package -DskipTests
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-slim
 
-# Use lightweight JDK image to run the application
-FROM eclipse-temurin:17-jdk-alpine
+# Set the working directory inside the container
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+
+# Copy the JAR file built by Maven
+COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose the port your Spring Boot app runs on
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Run the JAR file
+ENTRYPOINT ["java","-jar","app.jar"]
