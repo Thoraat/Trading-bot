@@ -22,6 +22,7 @@ WORKDIR /app
 # Copy the pom.xml and source code
 COPY pom.xml .
 COPY src ./src
+COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Build the application (for Maven)
 RUN apk add --no-cache maven
