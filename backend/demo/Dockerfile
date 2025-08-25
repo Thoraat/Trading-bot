@@ -22,7 +22,7 @@ WORKDIR /app
 # Copy the pom.xml and source code
 COPY pom.xml .
 COPY src ./src
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+# COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Build the application (for Maven)
 RUN apk add --no-cache maven
@@ -38,4 +38,4 @@ RUN mvn package -DskipTests
 EXPOSE 8080
 
 # Run the application
-CMD ["java", "-jar", "target/your-app-name-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
