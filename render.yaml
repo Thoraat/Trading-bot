@@ -5,6 +5,4 @@ services:
     rootDir: backend/demo
     dockerfilePath: backend/demo/Dockerfile
     plan: free
-    envVars:
-      - key: PORT
-        value: 8080
+    autoDeploy: true
