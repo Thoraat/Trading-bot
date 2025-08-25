@@ -2,9 +2,9 @@ services:
   - type: web
     name: backend-service
     env: docker
-    plan: free
     rootDir: backend/demo
     dockerfilePath: backend/demo/Dockerfile
+    plan: free
     envVars:
       - key: PORT
         value: 8080
