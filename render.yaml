@@ -1,12 +1,10 @@
 services:
   - type: web
-    name: final-trade-backend
+    name: backend-service
     env: docker
-    rootDir: backend/demo/Dockerfile
-    plan: free         # or starter / standard
-    autoDeploy: true
+    plan: free
+    rootDir: backend/demo
+    dockerfilePath: backend/demo/Dockerfile
     envVars:
       - key: PORT
         value: 8080
-      # - key: API_KEY
-      #   sync: false   # Set in Render dashboard (not in Git)
