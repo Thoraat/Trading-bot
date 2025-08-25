@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: backend-service
+    name: trading-bot-backend
     env: docker
     rootDir: backend/demo
     dockerfilePath: backend/demo/Dockerfile
